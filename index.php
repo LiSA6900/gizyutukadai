@@ -11,6 +11,10 @@
         margin-bottom: 0px;
         font-weight: bold;
       }
+      textarea{
+        width: 300px;
+        height: 30px;
+      }
     </style>
   </head>
   <body>
@@ -18,7 +22,7 @@
       <h2>お問合せフォーム</h2>
       <div class="input-area">
         <p>件名</p>
-        <select name="choice">
+        <select name="choice" required>
           <option value="ご意見">ご意見</option>
           <option value="ご感想">ご感想</option>
           <option value="その他">その他</option>
@@ -26,6 +30,7 @@
       </div>
       <div class="input-area">
         <p>名前</p>
+        <!--「required」を指定することで入力必須項目にすることができる-->
         <input type="text" name="name" required>
       </div>
       <div class="input-area">
@@ -38,14 +43,15 @@
       </div>
       <div class="input-area">
         <p>お問合せ内容</p>
-        <input type="text-area" name="email" required>
+        <input type="textarea" name="contact_body" required>
       </div>
       <div class="input-area">
         <p>添付画像（任意）</p>
-        <input type="file" name="test" required>
+        <!--画像ファイルを全て許可-->
+        <input type="file" name="file" accept="image/*">
       </div>
       <div class="input-area">
-        <button type="submit" name="submit" value="送信">送信</button>
+        <button type="submit" name="submit" value="確認">確認</button>
       </div>
     </form>
   </body>
