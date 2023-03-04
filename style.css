@@ -1,0 +1,37 @@
+.input-area{
+  margin-bottom: 20px;
+}
+
+p{
+  margin-bottom: 0px;
+  font-weight: bold;
+}
+
+select{
+  width: 100px;
+}
+
+input{
+  width: 250px;
+}
+
+span{
+  color: red;
+}
+
+.input-area{
+  margin-bottom: 20px;
+}
+
+p{
+  margin-bottom: 0px;
+  font-weight: bold;
+}
+
+span{
+  color: red;
+}
+
+.warning{
+  color: red;
+}

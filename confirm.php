@@ -1,7 +1,7 @@
 <?php
-//直リンクされた場合index.phpにリダイレクト
+//直リンクされた場合index.htmlにリダイレクト
 if($_SERVER["REQUEST_METHOD"] != "POST"){
-	header("Location: index.html");
+	header("Location: form.html");
 	exit();
 }
 
@@ -10,8 +10,8 @@ $choice = $_POST['choice'];
 $name = $_POST['name'];
 $email = $_POST['email'];
 $tel = $_POST['tel'];
-$contact_body = $_POST['contact_body'];
-$file = $_POST['file'];
+$message = $_POST['message'];
+$upload_file = $_FILES['upload_file'];
 ?>
 
 <!--PHPでhtmlファイルをincludeして読み込む-->
