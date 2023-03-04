@@ -38,17 +38,17 @@
         <input type="email" name="email" required>
       </div>
       <div class="input-area">
-        <p>電話番号</p>
-        <input type="tel" name="tel" required>
+        <p>電話番号(ハイフン不要)</p>
+        <input type="tel" name="tel" pattern="\d{2,4}-?\d{2,4}-?\d{3,4}" required>
       </div>
       <div class="input-area">
         <p>お問合せ内容</p>
         <input type="textarea" name="contact_body" required>
       </div>
       <div class="input-area">
-        <p>添付画像（任意）</p>
-        <!--画像ファイルを全て許可-->
-        <input type="file" name="file" accept="image/*">
+        <p>添付画像(任意)</p>
+        <!--画像ファイルを全て許可、multipleで複数ファイル選択可能-->
+        <input type="file" name="file" accept="image/*" multiple>
       </div>
       <div class="input-area">
         <button type="submit" name="submit" value="確認">確認</button>
