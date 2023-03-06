@@ -1,4 +1,5 @@
 <?php
+
 $str = mb_convert_encoding($str, "UTF-8", "JIS, eucjp-win, sjis-win");
 
 //直リンクされた場合form.htmlにリダイレクト
@@ -8,7 +9,7 @@ if($_SERVER["REQUEST_METHOD"] != "POST"){
 }
 
 //画像を保存
-// move_uploaded_file($_FILES['image']['tmp_name'], './upload/' . $img_name);
+move_uploaded_file($_FILES['image']['tmp_name'], './upload/' . $image);
 
 // フォームのボタンが押されたら
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -18,14 +19,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $email = $_POST["email"];
   $tel = $_POST["tel"];
   $message = $_POST["message"];
-  // アップロードファイル名を取得
-  //$image = '';
-  //  if ($_FILES['image']['name']) {
-  //    $image = htmlspecialchars($_FILES['image']['name'], ENT_QUOTES, 'UTF-8');
-  //  }
+  $img_name = $_FILES['image']['name'];
 }
 
-?>
+include('./confirm.html');
 
-<!--PHPでhtmlファイルをincludeして読み込む-->
-<?php include('./confirm.html'); ?>
+?>
