@@ -11,9 +11,7 @@
       <div class="input-area">
         <p class="item">件名<span>※</span></p>
         <select name="choice" required>
-          <?php foreach ($choices as $key => $val) : ?>
-          <?php echo "<option value=$val> $val </option> " ?>      
-          <?php endforeach ?> 
+          <?php echo $results; ?>
 　　　　</select>
       </div>
       <div class="input-area">
@@ -44,3 +42,4 @@
     </form>
   </body>
 </html>
+
