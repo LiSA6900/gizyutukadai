@@ -1,7 +1,7 @@
 <?php
 $user = "ENV['DB_USERNAME']";
 $pass = "ENV['DB_PASSWORD']";
-$dsn = "mysql:dbname=ENV['dbname'];host=ENV['host'];charset=utf8";
+$dsn = "mysql:dbname=ENV['DB_DATABASE'];host=ENV['DB_HOST'];charset=utf8";
 
 try{
   $dbh = new PDO($dsn, $user, $pass);
