@@ -7,10 +7,6 @@ if (isset($_POST["submit"])) {
 mb_language("Ja");
 mb_internal_encoding("UTF-8");
 
-// ヘッダー情報を設定
-$header = "MIME-Version: 1.0\n";
-$header .= "From: TEST <test@test.com>\n";
-$header .= "Reply-To: TEST <test@test.com>\n";
 //送信先アドレス
 $to = $email;
 //メール件名
@@ -45,6 +41,8 @@ $auto_reply_body = <<<EOM
 しばらくお待ちください。
 EOM;
 
+//送信元
+$headers = "From: test@test.com";
 //メール送信
 mb_send_mail($to, $auto_reply_subject, $auto_reply_body, $headers); 
 
@@ -82,6 +80,8 @@ $admin_reply_body = <<<EOM
 
 EOM;
 
+//送信元
+$headers = "From: test@test.com";
 //メール送信
 mb_send_mail($admin_to, $admin_reply_subject, $admin_reply_body, $headers); 
 
