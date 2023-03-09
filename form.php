@@ -1,7 +1,7 @@
 <?php
-$user = "ENV['DB_USERNAME']";
-$pass = "ENV['DB_PASSWORD']";
-$dsn = "mysql:dbname=ENV['DB_DATABASE'];host=ENV['DB_HOST'];charset=utf8";
+$user = "env['DB_USERNAME']";
+$pass = "env['DB_PASSWORD']";
+$dsn = "mysql:dbname=env['DB_DATABASE'];host=env['DB_HOST'];charset=utf8";
 
 try{
   $dbh = new PDO($dsn, $user, $pass);
@@ -14,7 +14,7 @@ try{
   }
   // 接続を閉じる
   $dbh = null;
-}      
+}
 catch(PDOException $e){
   echo 'DB接続エラー'.$e->getMessage();
 }
