@@ -1,15 +1,18 @@
 <?php
-$user = "root";
-$pass = "asdfasdf01";
-$dsn = "mysql:dbname=testdb;host=localhost;charset=utf8";
+$user = "ENV['DB_USERNAME']";
+$pass = "ENV['DB_PASSWORD']";
+$dsn = "mysql:dbname=ENV['dbname'];host=ENV['host'];charset=utf8";
 
 try{
   $dbh = new PDO($dsn, $user, $pass);
   $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
   $sql="SELECT * FROM choice_data";
   $stmt = $dbh->query($sql);
-  $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
-  print_r($result);
+  // 表示処理
+  while($row = $stmt->fetch(PDO::FETCH_ASSOC)){
+    echo $row["choice"];
+  }
+  // 接続を閉じる
   $dbh = null;
 }      
 catch(PDOException $e){

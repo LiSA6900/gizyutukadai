@@ -11,11 +11,7 @@
       <div class="input-area">
         <p class="item">件名<span>※</span></p>
         <select name="choice" required>
-          <?php
-          $results = $stmt->fetchall();
-          foreach ($results as $row) {
-          echo $row['choice_data'];
-          ?>
+          <?php echo $row["choice"];?>
 　　　　</select>
       </div>
       <div class="input-area">
